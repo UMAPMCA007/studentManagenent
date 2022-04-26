@@ -47,6 +47,8 @@
             margin-left: 50px;
             }
 
+           
+
             @media screen and (max-height: 450px) {
             .sidenav {padding-top: 15px;}
             .sidenav a {font-size: 18px;}
@@ -122,7 +124,7 @@
                                                 <th>Qulification</th>
                                                 <th>Applied Course</th>
                                                 <th>Application Status</th>
-                                                <th >Action</th>
+                                                
                                                 
                                             </tr>
                                         </thead>
@@ -213,6 +215,7 @@
         // print the page
         $('#print').click(function(){
             $("#print").hide();
+            $("#action").addClass(".display");
             $(".edit").hide();
             window.print();
             location.reload();
