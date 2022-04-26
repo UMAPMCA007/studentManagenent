@@ -135,7 +135,7 @@
                                                     <td>{{$s->state}}</td>
                                                     <td>{{$s->city}}</td>
                                                     <td>{{$s->qualification}}</td>
-                                                    <td>{{$s->course_id}}</td>
+                                                    <td>{{App\Models\AppliedCourse::course($s->course_id)}}</td>
                                                     <td>{{$s->status}}</td>
                                                     <td>
                                                         <button id="{{$s->id}}" class="btn btn-primary edit">Edit Status</a>
