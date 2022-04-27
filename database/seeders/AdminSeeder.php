@@ -23,7 +23,7 @@ class AdminSeeder extends Seeder
         $user->state = 'Kerala';
         $user->city = 'Kochi';
         $user->Is_admin = 1;
-        $user->password = bcrypt('admin');
+        $user->password = bcrypt('admin12345678');
         $user->save();
 
     

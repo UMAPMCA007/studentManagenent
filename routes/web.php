@@ -17,13 +17,10 @@ use App\Http\Controllers\Auth\LoginController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
+    'auth'
 ])-> group(function () {
-    Route::post('/logout', [LoginController::class,'logout'])->name('logout');
     Route::get('/dashboard', [DashBoardController::class, 'index'])->name('dashboard');
     Route::get('/status', [DashBoardController::class, 'status'])->name('status');
     Route::get('/course', [DashBoardController::class, 'course'])->name('course');

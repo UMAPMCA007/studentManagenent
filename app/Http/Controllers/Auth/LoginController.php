@@ -4,17 +4,25 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    //logout 
-    public function logout(Request $request)
+
+    public function __construct()
     {
-        // logout controller
-        $request->session()->invalidate();
+        $this->middleware('guest')->except('logout');
+    }
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function logout()
+    {
+
+        auth()->guard('web')->logout();
         return redirect('/');
-
-
     }
 
 
