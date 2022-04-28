@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Application Status') }}
+            {{ __('Student Application Status') }}
         </h2>
     </x-slot>
 
@@ -68,12 +68,12 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-10 offset-md-2">
+                <div class="col-md-10 offset-md-2 mb-5">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-header">
                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                                    {{ __('Application Status') }}
+                                    {{ __('Student Application Status') }}
                                 </h2>
                             </div>
                             <div class="card-body">

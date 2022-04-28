@@ -102,9 +102,9 @@
            </div>
          </div>   
     
-        <div class="container">
+        <div class="container ">
             <div class="row">
-                <div class="col-md-10 offset-md-2 mb-5">
+                <div class="col-md-10 offset-md-2  mb-5">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-header">
@@ -112,7 +112,7 @@
                                     {{ __('Application Status') }}
                                 </h2>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body ">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-sm">
                                         <thead>
@@ -137,7 +137,7 @@
                                                     <td>{{$s->state}}</td>
                                                     <td>{{$s->city}}</td>
                                                     <td>{{$s->qualification}}</td>
-                                                    <td>{{App\Models\AppliedCourse::course($s->course_id)}}</td>
+                                                    <td>{{$s->course}}</td>
                                                     <td>{{$s->status}}</td>
                                                     <td>
                                                         <button id="{{$s->id}}" class="btn btn-primary edit">Edit Status</a>
@@ -155,8 +155,6 @@
                                     <button  id ="print" class="btn btn-success">Print</button>
                                 </div>    
                             </div>
-                           
-                           
                         </div>
                     </div>
                 </div>

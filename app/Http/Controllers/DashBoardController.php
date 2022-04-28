@@ -86,10 +86,11 @@ class DashBoardController extends Controller
             'users.city',
             'users.qualification',
             'applied_courses.id',
-            'applied_courses.course_id',
+            'courses.course',
             'applied_courses.status'
         )
         ->leftJoin('users', 'users.id', '=', 'applied_courses.user_id')
+        ->leftJoin('courses', 'courses.id', '=', 'applied_courses.course_id')
         ->get();
          
         return view('application',compact('status'));

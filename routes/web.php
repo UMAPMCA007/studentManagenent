@@ -23,10 +23,13 @@ Route::middleware([
 ])-> group(function () {
     Route::get('/dashboard', [DashBoardController::class, 'index'])->name('dashboard');
     Route::get('/status', [DashBoardController::class, 'status'])->name('status');
+    Route::post('/save_course', [DashBoardController::class, 'save_course'])->name('save_course');
+Route::middleware(['admin'])->group(function () {
     Route::get('/course', [DashBoardController::class, 'course'])->name('course');
     Route::post('/student_course', [DashBoardController::class, 'student_course'])->name('student_course');
-    Route::post('/save_course', [DashBoardController::class, 'save_course'])->name('save_course');
     Route::get('/application', [DashBoardController::class, 'application'])->name('application');
     Route::get('/application_edit/{id}', [DashBoardController::class, 'application_edit'])->name('application_edit');
     Route::post('/application_update/{id}', [DashBoardController::class, 'application_update'])->name('application_update');
+});        
+    
 });
