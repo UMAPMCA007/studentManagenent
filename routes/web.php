@@ -18,14 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+Route::middleware(['auth'])-> group(function () {
+      Route::get('/dashboard', [DashBoardController::class, 'index'])->name('dashboard');
+});
 Route::middleware([
     'auth','student'
 ])-> group(function () {
-    Route::get('/dashboard', [DashBoardController::class, 'index'])->name('dashboard');
     Route::get('/status', [DashBoardController::class, 'status'])->name('status');
     Route::post('/save_course', [DashBoardController::class, 'save_course'])->name('save_course');
 });    
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/course', [DashBoardController::class, 'course'])->name('course');
     Route::post('/student_course', [DashBoardController::class, 'student_course'])->name('student_course');
     Route::get('/application', [DashBoardController::class, 'application'])->name('application');
